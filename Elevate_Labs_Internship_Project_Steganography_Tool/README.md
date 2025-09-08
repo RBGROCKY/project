@@ -1,100 +1,63 @@
-# 🕵️‍♂️ Steganography Tool — Elevate Labs Internship Project
- 
+StegoLab — Elevate Labs Internship Steganography SuiteA dual-delivery steganography tool created during the Elevate Labs Internship. StegoLab offers both an offline desktop utility (Python/Tkinter) with optional AES-GCM encryption and a modern, client-side web application (React + TypeScript) that runs entirely in the browser.Highlights
+Two implementations in one project: Desktop (Python) + Web (React/TypeScript)
+Hide/extract text or arbitrary files inside lossless images (PNG/BMP)
+Optional strong encryption using AES-GCM with a passphrase
+Drag-and-drop UX in both desktop and web versions
+No server required for the web version — runs fully in the user’s browser
+What’s Included1) Python Desktop App (Tkinter)
+Purpose: Offline, user-friendly desktop steganography with encryption
+Key features:
 
----
+Supports PNG and BMP (lossless) image formats
+Embed/extract text or files
+Optional AES-GCM encryption with passphrase-derived key
+Drag-and-drop support (tkinterdnd2)
+GUI status updates and simple workflow
 
-> 🔐 A dual-approach steganography solution developed as part of the **Elevate Labs Internship** program.  
-> This project includes both a **local Python GUI tool** and a **modern web version** for embedding and extracting files/text from images.
 
----
-
-## 📦 Project Overview
-
-This repository contains **two implementations** of the steganography tool:
-
-1. **Python GUI Tool (Tkinter)** — Offline desktop version with AES encryption.  
-2. **Web App (React + TypeScript)** — Modern, browser-based version (no backend needed).
-
----
-
-## 🧩 Method 1: Python GUI Tool
-
-A desktop GUI application built using **Python’s Tkinter framework**.  
-It provides offline steganography with optional **AES-GCM encryption**.
-
-### 🔧 Features
-- 🖼️ Supports **PNG/BMP (lossless) image formats**  
-- 🔒 Optional **AES-GCM encryption with passphrase**  
-- 📄 Embed and extract **text or entire files**  
-- 💬 Drag-and-drop support via `tkinterdnd2`  
-- 🎨 Simple, user-friendly GUI with status updates  
-
----
-
-### 🚀 Getting Started (Python)
-
-```bash
-# Clone the repository
-git clone https://github.com/username/Elevate_Labs_Internship_Project_Steganography_Tool.git
+Quick start:
+bashCopy code[data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}git clone https://github.com/username/Elevate_Labs_Internship_Project_Steganography_Tool.git
 cd Elevate_Labs_Internship_Project_Steganography_Tool/python
-
-# Install dependencies
 pip install pillow pycryptodome tkinterdnd2
-
-# Launch the GUI tool
 python stego_tool.py
-```
 
----
+2) Web App (React + TypeScript + Vite)
+Purpose: Fast, modern browser-based steganography — no backend, instant usage
+Key features:
 
-## ⚛️ Method 2: Web Tool (React + TypeScript + Vite)
+Built with React + TypeScript and styled with TailwindCSS
+AES-GCM encryption/decryption implemented in the client
+Drag-and-drop for images and files
+Extract hidden content directly in the browser and download results
+Optionally published to static hosting for immediate access
 
-A modern, **interactive web-based steganography tool** that runs entirely in your browser.
 
-### 🔧 Features
-- ⚡ Lightning-fast UI with **React + TailwindCSS**  
-- 🔐 Secure **AES-GCM encryption/decryption**  
-- 📂 Drag-and-drop support for **images/files**  
-- 📤 Extract hidden messages/files directly in the browser  
-- 🌍 Hosted version available for instant access  
-
----
-
-### 🚀 Getting Started (Web App)
-
-```bash
-# Navigate to the web app project
-cd Elevate_Labs_Internship_Project_Steganography_Tool/project
-
-# Install dependencies
+Quick start:
+bashCopy code[data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}cd Elevate_Labs_Internship_Project_Steganography_Tool/project
 npm install
-
-# Start local development server
 npm run dev
-```
-
-👉 Build for production:
-```bash
+# Build for production:
 npm run build
-```
 
----
-
-## 📁 Project Structure
-
-```
-Elevate_Labs_Internship_Project_Steganography_Tool/
-├── python/               # Python GUI version
-│   └── stego_tool.py     # Main Tkinter GUI
+How It Works (High Level)
+Choose an image (PNG/BMP).
+Choose text or file to hide; optionally provide a passphrase.
+The tool encodes the payload into the image pixels using a steganographic embedding algorithm.
+If encryption is enabled, the payload is encrypted with AES-GCM before embedding.
+To retrieve: provide the stego-image (and passphrase if used) to extract and decrypt the hidden payload.
+Project LayoutElevate_Labs_Internship_Project_Steganography_Tool/
+├── python/               # Desktop Tkinter application
+│   └── stego_tool.py     # Main GUI app + embedding/extraction logic
 │
-├── project/              # React + TypeScript version
-│   ├── src/              # React source files
-│   ├── steganography.js  # Image encoding/decoding logic
+├── project/              # Web client (React + TypeScript)
+│   ├── src/              # React source code
+│   ├── steganography.js  # Encoding/decoding & crypto logic (client-side)
 │   ├── app.js
 │   └── ...
-```
-
----
+Security Notes
+Use PNG/BMP only — lossy formats (e.g., JPEG) will corrupt embedded data.
+AES-GCM provides confidentiality and integrity. Keep your passphrase safe.
+Client-side web version stores and processes data locally in the browser — no server uploads by design.
 
 ## 📸 Screenshots
 ### Web Version
@@ -131,3 +94,4 @@ Elevate_Labs_Internship_Project_Steganography_Tool/
 ## 👨‍💻 Author
 Developed by *B Sree Divya**  
 🧑‍💻 Internship Project @ **Elevate Labs**
+
