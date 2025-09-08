@@ -92,6 +92,7 @@ Client-side web version stores and processes data locally in the browser — no 
 ---
 
 ## 👨‍💻 Author
-Developed by *B Sree Divya**  
+Developed by *Adhaveni Rakesh**  
 🧑‍💻 Internship Project @ **Elevate Labs**
+
 
